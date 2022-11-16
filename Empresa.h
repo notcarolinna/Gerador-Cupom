@@ -1,38 +1,46 @@
-#ifndef EMPRESA_H
-#define EMPRESA_H
+#ifndef EMPRESA_h
+#define EMPRESA_h
 
+#include <vector>
 #include "Endereco.h"
+#include "Produto.h"
+#include "Desconto.h"
 
 #pragma once
 
 class Empresa
 {
 public:
-    Empresa(std::string nome, std::string cnpj, std::string ie, std::string telefone, Endereco *endereco);
+    Empresa(string nome, string cnpj, string ie, string telefone, Endereco* endereco);
     ~Empresa();
 
-    std::string getNome();
-    void setNome(std::string nome);
+    void getProdutos();
+    void getDescontos();
 
-    std::string getCnpj();
-    void setCnpj(std::string cnpj);
+    string getNome();
+    void setNome(string nome);
 
-    std::string getIe();
-    void setIe(std::string ie);
+    string getCnpj();
+    void setCnpj(string cnpj);
 
-    std::string getTelefone();
-    void setTelefone(std::string telefone);
+    string getIe();
+    void setIe(string ie);
 
-    std::string getEndereco();
-    void setEndereco(std::string endereco);
+    string getTelefone();
+    void setTelefone(string telefone);
 
-    std::string toString();
+    string getEndereco();
+    void setEndereco(string endereco);
+
+    string toString();
 private:
-    std::string nome;
-    std::string cnpj;
-    std::string ie;
-    std::string telefone;
-    Endereco *endereco;
+    string nome;
+    string cnpj;
+    string ie;
+    string telefone;
+    Endereco* endereco;
+    vector<Produto*> produtos;
+    vector<Desconto*> descontos;
 };
 
 #endif
