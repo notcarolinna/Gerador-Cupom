@@ -4,7 +4,6 @@
 #include <iomanip>   // para usar manip. (setw, right, ...)
 #include <cstdlib>   // para usar srand(), rand() e exit()
 #include <ctime>     // para usar time()
-
 #include "Empresa.h"
 #include "EmpresaService.h"
 
@@ -20,40 +19,45 @@ EmpresaService::~EmpresaService()
 
 }
 
-Empresa* EmpresaService::get(){
-    std::ifstream infile("../data/empresa.csv");
-    std::string line;
+Empresa* EmpresaService::get() {
+    ifstream infile("data/empresa.csv");
+    string line;
 
-    std::string nome;
-    std::string cnpj;
-    std::string ie;
-    std::string telefone;
-    std::string endereco;
+    string nome;
+    string cnpj;
+    string ie;
+    string telefone;
+    string endereco;
 
     int attr = 0;
-    while (std::getline(infile, line))
+    while (getline(infile, line))
     {
-        std::string delimiter = ";";
+        string delimiter = ";";
+        line = line + delimiter; // "gruda a linha com o ;"
         size_t pos = 0;
-        std::string token;
-        while ((pos = line.find(delimiter)) != std::string::npos) {
+        string token;
+        while ((pos = line.find(delimiter)) != string::npos) {
             token = line.substr(0, pos);
             line.erase(0, pos + delimiter.length());
-            if(attr == 0) {
+            if (attr == 0) {
                 nome = token;
-            } else if(attr == 1) {
+            }
+            else if (attr == 1) {
                 cnpj = token;
-            } else if(attr == 2) { 
+            }
+            else if (attr == 2) {
                 ie = token;
-            } else if(attr == 3) { 
+            }
+            else if (attr == 3) {
                 endereco = token;
-            } else if(attr == 4) { 
+            }
+            else if (attr == 4) {
                 telefone = token;
-            }  
+            }
             attr++;
         }
     }
 
-    Empresa *empresa = new Empresa(nome, cnpj, ie, telefone, new Endereco(endereco));
+    Empresa* empresa = new Empresa(nome, cnpj, ie, telefone, new Endereco(endereco));
     return empresa;
 }
