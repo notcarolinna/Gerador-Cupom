@@ -6,7 +6,7 @@
 
 using namespace std;
 
-EmpresaController::EmpresaController(EmpresaService *empresaService)
+EmpresaController::EmpresaController(EmpresaService* empresaService)
 {
     this->empresaService = empresaService;
 }
@@ -16,18 +16,18 @@ EmpresaController::~EmpresaController()
 
 }
 
-void EmpresaController::createEmpresa(std::string nome, std::string cnpj){
+void EmpresaController::createEmpresa(string nome, string cnpj) {
 
 }
 
-Empresa * EmpresaController::readEmpresa(){
+Empresa* EmpresaController::readEmpresa() {
     return this->empresaService->get();
 }
 
-void EmpresaController::updateEmpresa(std::string cnpj){
+void EmpresaController::updateEmpresa(string cnpj) {
 
 }
 
-void EmpresaController::deleteEmpresa(std::string cnpj){
+void EmpresaController::deleteEmpresa(string cnpj) {
 
 }
