@@ -1,26 +1,33 @@
-#ifndef DESCONTO_h
-#define DESCONTO_h
+#ifndef DESCONTO_HPP
+#define DESCONTO_HPP
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 #pragma once
+ 
+class Desconto{
 
-class Desconto {
+int tipo;
+std::string codigo_barras_a; //campo 1
+std::string valor_desc; // campo 2
+std::string num_itens_levados; //campo 3
+std::string num_itens_pagos; //campo 4
+std::string codigo_barras_b; //campo 5
+std::string desc_prod_b; // campo 6
 
-	int tipo;
-	string codigo_barras_a; //campo 1
-	string valor_desc; // campo 2
-	string num_itens_levados; //campo 3
-	string num_itens_pagos; //campo 4
-	string codigo_barras_b; //campo 5
-	string desc_prod_b; // campo 6
 
-public:
-	Desconto(string, string);
-	Desconto(string, string, string);
-	Desconto(string, string, string, string, string);
+public: 
+Desconto( std::string, std::string );
+Desconto( std::string, std::string, std::string );
+Desconto( std::string, std::string, std::string, std::string, std::string );
+std::string toString();
+std::string getCodigo_barras_a();
+float getValor_desc();
+int getNum_itens_levados();
+int getNum_itens_pagos();
+std::string getCodigo_barras_b();
+float getDesc_prod_b();
+int getTipo();
 
 };
 
