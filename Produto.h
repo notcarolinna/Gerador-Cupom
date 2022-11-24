@@ -1,27 +1,29 @@
-#ifndef PRODUTO_h
-#define PRODUTO_h
+#ifndef PRODUTO_HPP
+#define PRODUTO_HPP
 
-#pragma once
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 class Produto {
 public:
-    Produto(string codigo, string desc, string uni, string medida, string total_uni, string preco);
+   Produto(std::string codigo, std::string desc, std::string uni, std::string medida, std::string total_uni, std::string preco);
     ~Produto();
-    string getCodigo_barras();
-    string getDescricao();
-    string getUni_ou_Gran();
-    string getMedida();
-    string getTotal_uni();
-    string getPreco_uni();
-    string toString();
+    std::string getCodigo_barras();
+    std::string getDescricao();
+    std::string getUni_ou_Gran();
+    std::string getMedida();
+    std::string getTotal_uni();
+    float getPreco_uni();
+    std::string toString();
 
 private:
-    string codigo_barras;
-    string descricao;
-    string uni_ou_gran; // como o produto é vendido
-    string medida; // unidade de medida associada a embalagem
-    string total_uni;
-    string preco_uni; // preço unitario
+  std::string codigo_barras;
+  std::string descricao;
+  std::string uni_ou_gran; // como o produto é vendido
+  std::string medida; // unidade de medida associada a embalagem
+  std::string total_uni;
+  std::string preco_uni; 
 
 
 };
