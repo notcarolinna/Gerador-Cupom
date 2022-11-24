@@ -4,14 +4,17 @@
 
 
 class Cupom{
-Cupom(std::string num, std::string serie);
+
 std::string numero;
 std::string serie;
+int num;
 
 public:
-std::string getNumero();
-std::string getSerie();
-std::stirng getCupom();
-}
+Cupom();
+int getNumero();
+int getSerie();
+void getCupom();
+void aumentanum();
+};
 
 #endif
