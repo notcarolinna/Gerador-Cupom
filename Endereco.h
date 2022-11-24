@@ -1,27 +1,29 @@
-#ifndef ENDERECO_h
-#define ENDERECO_h
+#ifndef ENDERECO_HPP
+#define ENDERECO_HPP
 
 #pragma once
 
 class Endereco
 {
 public:
-    Endereco(string line);
+    Endereco(std::string line);
     ~Endereco();
-    string getLogradouro();
-    string getNumero();
-    string getComplemento();
-    string getBairro();
-    string getCidade();
-    string getCep();
+    std::string getLogradouro();
+    std::string getNumero();
+    std::string getComplemento();
+    std::string getBairro();
+    std::string getCidade();
+    std::string getUf();
+    std::string getCep();
 
 private:
-    string logradouro;
-    string numero;
-    string complemento;
-    string bairro;
-    string cidade;
-    string cep;
+  std::string logradouro;
+  std::string numero;
+  std::string complemento; 
+  std::string bairro;
+  std::string cidade;
+  std::string uf;
+  std::string cep;
 };
 
 #endif
