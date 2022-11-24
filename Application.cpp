@@ -1,11 +1,11 @@
 #include <string>
 #include <iostream>
 
-#include "Empresa.h"
-#include "EmpresaService.h"
-#include "EmpresaController.h"
+#include "Empresa.hpp"
+#include "EmpresaService.hpp"
+#include "EmpresaController.hpp"
 
-#include "Application.h"
+#include "Application.hpp"
 
 Application::Application()
 {
@@ -16,11 +16,10 @@ Application::~Application() { }
 
 void Application::init() {
     this->empresa = this->empresaController->readEmpresa();
-    cout << "Li empresa " << endl;
     this->empresa->getProdutos();
-    cout << "Li produtos " << endl;
     this->empresa->getDescontos();
-    cout << "Li descontos " << endl;
+}
 
-    cout << this->empresa->toString() << endl;
+Empresa* Application::getEmpresa(){
+  return empresa;
 }
