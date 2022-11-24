@@ -1,6 +1,6 @@
-#ifndef EMPRESACONTROLLER_h
-#define EMPRESACONTROLLER_h
-
+#ifndef EMPRESACONTROLLER_HPP
+#define EMPRESACONTROLLER_HPP
+#include "EmpresaService.hpp"
 #pragma once
 
 using namespace std;
@@ -8,16 +8,14 @@ using namespace std;
 class EmpresaController
 {
 public:
-    EmpresaController(EmpresaService* empresaService);
+    EmpresaController(EmpresaService *empresaService);
     ~EmpresaController();
 
-    void createEmpresa(string nome, string cnpj);
-    Empresa* readEmpresa();
-    void updateEmpresa(string cnpj);
-    void deleteEmpresa(string cnpj);
-
+    void createEmpresa(std::string nome, std::string cnpj);
+    Empresa * readEmpresa();
+    
 private:
-    EmpresaService* empresaService;
+    EmpresaService *empresaService;
 };
 
 #endif
