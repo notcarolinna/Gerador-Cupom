@@ -1,5 +1,5 @@
-#ifndef EMPRESASERVICE_H
-#define EMPRESASERVICE_H
+#ifndef EMPRESASERVICE_HPP
+#define EMPRESASERVICE_HPP
 
 #pragma once
 
